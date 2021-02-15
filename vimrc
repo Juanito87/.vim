@@ -1,12 +1,13 @@
 " Basic config
-set nocompatible                                                               " No compatibility with vi
 syntax enable                                                                  " Enable syntax highlight using file extension
+set nocompatible                                                               " No compatibility with vi
 set autoread                                                                   " If the file is changed outside of vim, it's read again
 set number relativenumber                                                      " Turn hybrid line numbers on
+set nu                                                                         " Shows current line number instead of 0
 set formatoptions=qln                                                          " Sets format options when pasting, q= comments can be formatted, l= long lines are not broken, n= recognize numbered list when formatting test. :h fo-table for reference
-let mapleader =" "                                                             " Setting leader to space bar
 set splitbelow splitright                                                      " Splits open at the bottom and right
 set viminfo+=n~/.vim/viminfo
+let mapleader =" "                                                             " Setting leader to space bar
 
 " Clipboard integration
 set mouse=a                                                                    " Enable mouse use in all modes (n, v, i, c and h) helps with visual selection
@@ -29,6 +30,7 @@ if !isdirectory($HOME."/.vim/undo-dir")
 endif
 set undodir=~/.vim/undo-dir                                                    " Setting dir for undo files
 set undofile                                                                   " Enabling undo files
+set noswapfile                                                                 " Disable swap files for vim files, undo will do the trick
 
 " Indentation config
 filetype plugin indent on                                                      " When indenting with '>', use 4 spaces width
@@ -77,13 +79,14 @@ set wildmode=longest,list,full                                                 "
 set wildmenu                                                                   " Display matching files when we tab complete
 set showmatch                                                                  " Show matching brackets
 set ignorecase                                                                 " Do case insensitive matching
-set smartcase                                                                  " Do smart case matching
+set smartcase                                                                  " Do smart case matching, ignorecase needs to be set
 set incsearch                                                                  " Incremental search to highlight partial matches
 set hlsearch                                                                   " Highlight partial search
+set nohlsearch                                                                 " clear highlight after search is finished
 set rtp+=~/.fzf                                                                " Setting fzf in runtime
 function! s:update_highlights()                                                " Setting highlight to match theme
     hi CursorLine ctermbg=none guibg=none
-    hi VertSplit ctermbg=none guibg=none
+    hi VertSplit ctermbg=none guibg=none/
 endfunction
 autocmd User AirlineAfterTheme call s:update_highlights()
 
@@ -113,6 +116,7 @@ endif
 " Automatically deletes all trailing white space and newlines at end of file on save
 au BufWritePre * %s/\s\+$//e
 au BufWritepre * %s/\n\+\%$//e
+au BufWritepre * %s/\^\[\+\%$//e
 
 " Netrw config
 "" Toggle function to work more like nerdtree
@@ -212,6 +216,7 @@ let g:syntastic_php_checkers = ["php","phpcs"]                  " Setting php li
 let g:syntastic_css_checkers = ["phpcs"]                        " Setting css linter
 let g:syntastic_dockerfile_checkers = ["dockerfile-lint"]       " Setting dockerfile linter
 let g:syntastic_html_checkers = ["w3"]                          " Setting html linter
+let g:syntastic_python_checkers = ["pylint"]                    " Setting python linter
 let g:syntastic_filetype_map = {"Dockerfile": "dockerfile"}     " Map dockerfiles with lower case as dockerfiles
 au FileType qf wincmd L                                         " Setting quickfix/loclist to the right side of the screen
 au FileType qf vertical resize 80                               " Resize quickfix/loclist to 80 lines
@@ -219,7 +224,17 @@ au FileType qf vertical resize 80                               " Resize quickfi
 map <leader>n :lnext<CR>
 map <leader>p :lprevious<CR>
 map <leader>c :lclose<CR>
-map <leader>o :lopen <bar>
+map <leader>o :lopen<bar><CR>
 
 " Enabling use of alias from vim
 let $BASH_ENV = "~/.vim/bash_env"
+
+" Setting programing tools
+augroup runprog
+    autocmd!
+    autocmd BufRead,BufNewFile *.py nnoremap <F5> :exec '!python3' shellescape(@%, 1)<cr>
+augroup END
+augroup compprog
+    autocmd!
+    autocmd BufRead,BufNewFile *.py nnoremap <F6> :exec '!python3 -m' shellescape(@%, 1)<cr>
+augroup END
