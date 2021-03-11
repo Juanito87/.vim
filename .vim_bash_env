@@ -4,9 +4,12 @@
 # Enabling alias expansion in non-interactive sessions (vim session)
 shopt -s expand_aliases
 # sourcing alias
-source ~/.shell_config/alias
-# sourcing personalized commands
-for f in ~/.shell_config/commands/*;
+for a in ~/.shell_config/myalias/*;
 do
-    source "$f";
+    source "$a";
 done
+# sourcing personalized commands
+# for c in ~/.shell_config/commands/*;
+# do
+#     source "$c";
+# done
