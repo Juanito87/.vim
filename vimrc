@@ -28,9 +28,9 @@ if executable('rg')
 endif
 
 " Clipboard integration
-" set mouse=a                             " Enable mouse use in all modes (n, v, i, c and h) helps with visual selection
-" set clipboard=unnamedplus               " Vim buffer to system clipboard (requieres vim compiled with +clipboard)
+set mouse=a                             " Enable mouse use in all modes (n, v, i, c and h) helps with visual selection
 set clipboard=unnamed                   " Vim buffer to system clipboard (requieres vim compiled with +clipboard)
+" set clipboard=unnamedplus               " Vim buffer to system clipboard (requieres vim compiled with +clipboard)
 
 "" Integration for wsl and clipboard
 if system('uname -r') =~ "Microsoft"
