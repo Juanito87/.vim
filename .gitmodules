@@ -31,3 +31,6 @@
 [submodule "pack/tmux/start/vim-tmux"]
 	path = pack/tmux/start/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule "pack/markdown-preview/start/markdown-preview.nvim"]
+	path = pack/markdown-preview/start/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim.git
