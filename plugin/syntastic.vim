@@ -20,6 +20,9 @@ let g:syntastic_filetype_map = {"Dockerfile": "dockerfile"}     " Map dockerfile
 au FileType qf wincmd L                                         " Setting quickfix/loclist to the right side of the screen
 au FileType qf vertical resize 80                               " Resize quickfix/loclist to 80 lines
 
+"" Setting tf files as json
+au BufRead,BufNewFile *.tf set filetype=json
+
 "" Mappings for allowing quick jump to errors, closing and opening loclist
 map <leader>n :lnext<CR>
 map <leader>p :lprevious<CR>
