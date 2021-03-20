@@ -14,3 +14,8 @@ let g:airline_detect_spell=1                                                   "
 
 " packadd! dracula                                                               " Needed for dracula to start
 " colorscheme dracula                                                            " Set color scheme to dracula plugin
+au WinLeave * set nocursorline nocursorcolumn " clean highlight after leaving window
+au WinEnter * set cursorline cursorcolumn "set highlight when entering window
+set cursorline cursorcolumn " set cursorline on
+" set color for higlighted line/column
+hi CursorLine cterm=NONE ctermbg=grey ctermfg=white guibg=grey guifg=white
