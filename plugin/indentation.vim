@@ -8,3 +8,4 @@ set backspace=indent,eol,start                                                 "
 set smartindent                                                                " Allows auto indent
 au FileType * set formatoptions-=c formatoptions-=r formatoptions-=o           " Disables automatic commenting with text width, on newline, or inserting with o. This config needs to execute after all file type plugin instances
 au BufReadPost * if &modifiable | retab | endif                                " Retab when opening the document, if the file is modifiable
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab                       " Setting tab config specific for yaml files
