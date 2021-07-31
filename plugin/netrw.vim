@@ -14,7 +14,7 @@ function! ToggleVimExplorer()
         endif
     else
         exec '1wincmd w'
-        Vexplore
+        Lexplore
         let t:expl_buf_num = bufnr("%")
     endif
 endfunction
@@ -29,6 +29,7 @@ function! NetrwMapping()
     let g:netrw_liststyle = 3             " Default directory view. Cycle with i
     let g:netrw_browse_split = 0          " New files are opened in a new vertical
     let g:netrw_altv = 1                  " Files are opened to the right of netrw
+    let g:netrw_chgwin = 2                " Files are opened without closing netrw
     let g:netrw_winsize = 25              " Window size
     let g:netrw_sort_sequence = '[\/]$,*' " Default config
     let g:netrw_list_hide= '.*.swp$,

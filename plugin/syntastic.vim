@@ -7,6 +7,7 @@ let g:syntastic_check_on_open = 1                               " Check for synt
 let g:syntastic_check_on_wq = 0                                 " Do not check files if quitting
 let g:syntastic_error_symbol = "✗"                              " Mapping error symbol
 let g:syntastic_warning_symbol = "⚠"                            " Mapping warning symbol
+let g:syntastic_sh_checkers = ['shellcheck', 'sh']              " Setting shell linter
 let g:syntastic_json_checkers = ["jsonlint"]                    " Setting json linter
 let g:syntastic_yaml_checkers = ["jsyaml"]                      " Setting yaml linter
 let g:syntastic_php_checkers = ["php","phpcs"]                  " Setting php linter
