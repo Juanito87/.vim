@@ -1,8 +1,9 @@
 " Airline config
 set t_Co=256                                                                     " Set terminal color options
-let g:airline_powerline_fonts = 1                                                " Set powerline symbols
 colorscheme gruvbox                                                              " Set color scheme to gruvbox plugin
 set background=dark                                                              " Set dark mode
+let g:airline_powerline_fonts = 1                                                " Set powerline symbols
+let g:airline_skip_empty_sections = 1                                            " Set to skip empty sections in statusline
 let g:airline#extensions#tmuxline#enabled = 0                                    " Set vim theme in tmux status line
 let g:airline#extensions#branch#enabled = 1                                      " Setting airline to show branches
 let g:airline#extensions#fugitiveline#enabled = 1                                " Enable buffer line integration with fugitive
@@ -18,4 +19,5 @@ au WinLeave * set nocursorline nocursorcolumn                                   
 au WinEnter * set cursorline cursorcolumn                                        " set highlight when entering window
 set cursorline cursorcolumn                                                      " set cursorline on
 " set color for higlighted line/column
-hi CursorLine cterm=NONE ctermbg=grey ctermfg=white gui=NONE guibg=grey guifg=white
+hi CursorLine cterm=NONE ctermbg=NONE ctermfg=white gui=NONE guibg=NONE guifg=white
+hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white gui=NONE guibg=NONE guifg=white

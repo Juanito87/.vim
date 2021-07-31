@@ -9,11 +9,3 @@ set incsearch                                  " Incremental search to highlight
 set hlsearch                                   " Highlight partial search
 set nohlsearch                                 " clear highlight after search is finished
 set rtp+=~/.fzf                                " Setting fzf in runtime
-
-" This is not is working but also gives an error
-" Setting highlight to match theme
-" function! s:update_highlights()
-"     hi CursorLine ctermbg=none guibg=none
-"     hi VertSplit ctermbg=none guibg=none
-" endfunction
-" autocmd User AirlineAfterTheme call s:update_highlights()
