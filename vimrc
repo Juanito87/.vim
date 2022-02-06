@@ -46,12 +46,13 @@ if &listchars ==# 'eol:$'
     set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
-" Automatically deletes all trailing white space at end of file on save
-au BufWritePre * %s/\s\+$//e
-" Automatically deletes all trailing newlines at end of file on save
-au BufWritepre * %s/\n\+\%$//e
-" Automatically deletes all trailing escapes at end of file on save
-au BufWritepre * %s/\^\[\+\%$//e
+" Commenting out to avoid issues with work commits
+" " Automatically deletes all trailing white space at end of file on save
+" au BufWritePre * %s/\s\+$//e
+" " Automatically deletes all trailing newlines at end of file on save
+" au BufWritepre * %s/\n\+\%$//e
+" " Automatically deletes all trailing escapes at end of file on save
+" au BufWritepre * %s/\^\[\+\%$//e
 
 " Enabling use of alias from vim
 let $BASH_ENV = "~/.vim/.vim_bash_env"

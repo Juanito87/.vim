@@ -21,3 +21,11 @@ Retab
 wsl
 dir
 shellcheck
+hostname
+lineinfile
+dest
+proto
+ufw
+insertafter
+gitignore
+ansible
