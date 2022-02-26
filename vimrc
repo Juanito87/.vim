@@ -16,6 +16,7 @@ set laststatus=2                        " Shows status line for windows
 set ruler                               " Show line and column number of the cursor
 set wildmenu                            " Improved command line completion
 set display+=lastline                   " Show lines that do not fit the screen
+set signcolumn=number                   " Column to show special sings
 
 " Expanding % functionality load matchit.vim, but only if the user hasn't installed a newer version
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -56,3 +57,39 @@ endif
 
 " Enabling use of alias from vim
 let $BASH_ENV = "~/.vim/.vim_bash_env"
+
+" Sourcing additional config
+"source ~/.vim/plugin/syntastic.vim"
+
+
+" syntastic options
+"" Lets
+let g:syntastic_always_populate_loc_list = 1                    " Always put detected error in the loclist
+let g:syntastic_auto_jump = 1                                   " Jumps directly to first error on open
+let g:syntastic_auto_loc_list = 1                               " Opens error windows if errors are detected
+let g:syntastic_check_on_open = 1                               " Check for syntax errors on open
+let g:syntastic_check_on_wq = 0                                 " Do not check files if quitting
+let g:syntastic_error_symbol = "✗"                              " Mapping error symbol
+let g:syntastic_warning_symbol = "⚠"                            " Mapping warning symbol
+let g:syntastic_sh_checkers = ['shellcheck', 'sh']              " Setting shell linter
+let g:syntastic_json_checkers = ["jsonlint"]                    " Setting json linter
+let g:syntastic_yaml_checkers = ["jsyaml"]                      " Setting yaml linter
+let g:syntastic_php_checkers = ["php","phpcs"]                  " Setting php linter
+let g:syntastic_css_checkers = ["phpcs"]                        " Setting css linter
+let g:syntastic_dockerfile_checkers = ["dockerfile-lint"]       " Setting dockerfile linter
+let g:syntastic_html_checkers = ["w3"]                          " Setting html linter
+let g:syntastic_python_checkers = ["pylint"]                    " Setting python linter
+let g:syntastic_filetype_map = {"Dockerfile": "dockerfile"}     " Map dockerfiles with lower case as dockerfiles
+
+"" Quickfix default layout
+au FileType qf wincmd L                                         " Setting quickfix/loclist to the right side of the screen
+au FileType qf vertical resize 80                               " Resize quickfix/loclist to 80 lines
+
+"" Setting tf files as json
+au BufRead,BufNewFile *.tf set filetype=json
+
+"" Mappings for allowing quick jump to errors, closing and opening loclist
+map <leader>n :lnext<CR>
+map <leader>p :lprevious<CR>
+map <leader>c :lclose<CR>
+map <leader>o :lopen<bar><CR>

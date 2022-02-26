@@ -1,39 +1,30 @@
-[submodule "pack/fzf/start"]
-	path = pack/fzf/start
-	url = https://github.com/junegunn/fzf.vim.git
 [submodule "pack/tpope/start/fugitive"]
-	path = pack/tpope/start/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+    path = pack/tpope/start/fugitive
+    url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/tpope/start/commentary"]
-	path = pack/tpope/start/commentary
-	url = https://github.com/tpope/vim-commentary.git
+    path = pack/tpope/start/commentary
+    url = https://github.com/tpope/vim-commentary.git
 [submodule "pack/tpope/start/surround"]
-	path = pack/tpope/start/surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "pack/vim-syntastic/start"]
-	path = pack/vim-syntastic/start
-	url = https://github.com/vim-syntastic/syntastic.git
+    path = pack/tpope/start/surround
+    url = https://github.com/tpope/vim-surround.git
 [submodule "pack/themes/start/gruvbox"]
-	path = pack/themes/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
+    path = pack/themes/start/gruvbox
+    url = https://github.com/morhetz/gruvbox.git
 [submodule "pack/themes/opt/dracula"]
-	path = pack/themes/opt/dracula
-	url = https://github.com/dracula/vim.git
+    path = pack/themes/opt/dracula
+    url = https://github.com/dracula/vim.git
 [submodule "pack/dist/start/vim-airline"]
-	path = pack/dist/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
+    path = pack/dist/start/vim-airline
+    url = https://github.com/vim-airline/vim-airline.git
 [submodule "pack/dist/start/prompt-airline"]
-	path = pack/dist/start/prompt-airline
-	url = https://github.com/edkolev/promptline.vim.git
+    path = pack/dist/start/prompt-airline
+    url = https://github.com/edkolev/promptline.vim.git
 [submodule "pack/tmux/start/tmuxline"]
-	path = pack/tmux/start/tmuxline
-	url = https://github.com/edkolev/tmuxline.vim.git
+    path = pack/tmux/start/tmuxline
+    url = https://github.com/edkolev/tmuxline.vim.git
 [submodule "pack/tmux/start/vim-tmux"]
-	path = pack/tmux/start/vim-tmux
-	url = https://github.com/tmux-plugins/vim-tmux.git
+    path = pack/tmux/start/vim-tmux
+    url = https://github.com/tmux-plugins/vim-tmux.git
 [submodule "pack/markdown-preview/start/markdown-preview.nvim"]
-	path = pack/markdown-preview/start/markdown-preview.nvim
-	url = https://github.com/iamcco/markdown-preview.nvim.git
-[submodule "pack/ansible"]
-	path = pack/ansible
-	url = https://github.com/pearofducks/ansible-vim.git
+    path = pack/markdown-preview/start/markdown-preview.nvim
+    url = https://github.com/iamcco/markdown-preview.nvim.git
