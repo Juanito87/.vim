@@ -28,3 +28,12 @@
 [submodule "pack/markdown-preview/start/markdown-preview.nvim"]
     path = pack/markdown-preview/start/markdown-preview.nvim
     url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule "pack/fzf/start/fzf"]
+	path = pack/fzf/start/fzf
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/vim-syntastic/start/syntastic"]
+	path = pack/vim-syntastic/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "pack/ansible/start/ansible"]
+	path = pack/ansible/start/ansible
+	url = https://github.com/pearofducks/ansible-vim
