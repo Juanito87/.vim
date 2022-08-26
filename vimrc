@@ -1,5 +1,8 @@
 " Basic config
 syntax enable                           " Enable syntax highlight using file extension
+" The 2 following options remove the error for way to long lines, but performance is awful
+set mmp=50000                           " Sets maxmempattern to 50000 to avoid issues with long lines in the repos while using syntax enable
+"set redrawtime=5000                     " Sets redrawtime to 5000 to avoid issues with long lines in the repos while using syntax enable
 set nocompatible                        " No compatibility with vi
 set autoread                            " If the file is changed outside of vim, it's read again
 set number relativenumber               " Turn hybrid line numbers on
@@ -88,8 +91,12 @@ au FileType qf vertical resize 80                               " Resize quickfi
 "" Setting tf files as json
 au BufRead,BufNewFile *.tf set filetype=json
 
-"" Mappings for allowing quick jump to errors, closing and opening loclist
+"" Mapings for allowing quick jump to errors, closing and opening loclist
 map <leader>n :lnext<CR>
 map <leader>p :lprevious<CR>
 map <leader>c :lclose<CR>
 map <leader>o :lopen<bar><CR>
+
+"" Maping to remove relative number from the session, mostly for copy
+map <leader>r :set nornu nu!<CR>
+map <leader>R :set nu rnu<CR>
